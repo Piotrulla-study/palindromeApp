@@ -20,8 +20,8 @@ public class PalindromeApplication {
             }
 
         }
-        catch (NumberFormatException ignored) {
-            System.out.println("Podano nieprawidłową liczbę słów.");
+        catch (NumberFormatException exception) {
+            System.out.println(exception.getMessage());
             return;
         }
 
