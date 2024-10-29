@@ -20,7 +20,7 @@ public class PalindromeService {
         }
     }
 
-    private boolean isPalindrome(String word) {
+    boolean isPalindrome(String word) {
         String cleanText = word.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
 
         return cleanText.contentEquals(new StringBuilder(cleanText).reverse());
