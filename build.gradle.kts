@@ -19,6 +19,11 @@ tasks.test {
     useJUnitPlatform()
 }
 
+tasks.withType<JavaCompile> {
+    options.encoding = "UTF-8"
+}
+
+
 application {
     mainClass.set("dev.piotrulla.PalindromeApplication")
 }

@@ -1,3 +1,0 @@
-kajak - jest palindromem
-level - jest palindromem
-mars - nie jest palindromem

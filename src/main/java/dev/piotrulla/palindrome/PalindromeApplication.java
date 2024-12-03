@@ -9,14 +9,14 @@ public class PalindromeApplication {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Podaj ilość słów do sprawdzenia:");
+        System.out.println("Podaj ilosc slow do sprawdzenia:");
         int wordsCount;
 
         try {
             wordsCount = Integer.parseInt(scanner.nextLine().trim());
 
             if (wordsCount <= 0) {
-                throw new NumberFormatException("Liczba słów musi być większa od 0.");
+                throw new NumberFormatException("Liczba slow musi byc wieksza od 0.");
             }
 
         }
@@ -25,21 +25,21 @@ public class PalindromeApplication {
             return;
         }
 
-        System.out.println("Podaj słowa do sprawdzenia po przecinku: ");
+        System.out.println("Podaj slowa do sprawdzenia po przecinku: ");
 
         String[] words = scanner.nextLine().split(",");
 
         if (words.length != wordsCount) {
-            System.out.println("Liczba podanych słów nie zgadza się z oczekiwaną liczbą.");
+            System.out.println("Liczba podanych slow nie zgadza sie z oczekiwana liczba.");
             return;
         }
 
         if (palindromeService.generateFile(words)) {
-            System.out.println("Plik został wygenerowany.");
+            System.out.println("Plik zostal wygenerowany.");
 
             return;
         }
 
-        System.out.println("Wystąpił błąd podczas generowania pliku.");
+        System.out.println("Wystapil blad podczas generowania pliku.");
     }
 }

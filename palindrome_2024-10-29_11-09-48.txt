@@ -1,3 +1,0 @@
-radar - jest palindromem
-lvl - jest palindromem
-int - nie jest palindromem

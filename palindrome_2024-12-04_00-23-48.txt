@@ -1,0 +1,4 @@
+kajak - jest palindromem
+lvl - jest palindromem
+mars - nie jest palindromem
+alkocholik - nie jest palindromem
