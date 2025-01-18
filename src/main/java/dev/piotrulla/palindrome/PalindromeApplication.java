@@ -6,7 +6,6 @@ public class PalindromeApplication {
 
     public static void main(String[] args) {
         PalindromeService palindromeService = new PalindromeService();
-
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Podaj ilosc slow do sprawdzenia:");
@@ -14,18 +13,18 @@ public class PalindromeApplication {
 
         try {
             wordsCount = Integer.parseInt(scanner.nextLine().trim());
-
-            if (wordsCount <= 0) {
-                throw new NumberFormatException("Liczba slow musi byc wieksza od 0.");
-            }
-
-        }
-        catch (NumberFormatException exception) {
-            System.out.println(exception.getMessage());
+        } catch (NumberFormatException exception) {
+            System.out.println("Podana wartosc nie jest liczba.");
             return;
         }
 
-        System.out.println("Podaj slowa do sprawdzenia po przecinku: ");
+        if (wordsCount <= 0) {
+            System.out.println("Liczba slow musi byc wieksza od 0.");
+            return;
+        }
+
+        String exampleWords = generateExampleWords(wordsCount);
+        System.out.println("Podaj slowa do sprawdzenia po przecinku (" + exampleWords + "):");
 
         String[] words = scanner.nextLine().split(",");
 
@@ -36,10 +35,20 @@ public class PalindromeApplication {
 
         if (palindromeService.generateFile(words)) {
             System.out.println("Plik zostal wygenerowany.");
-
             return;
         }
 
         System.out.println("Wystapil blad podczas generowania pliku.");
+    }
+
+    private static String generateExampleWords(int count) {
+        StringBuilder example = new StringBuilder();
+        for (int i = 0; i < count; i++) {
+            example.append("slowo");
+            if (i < count - 1) {
+                example.append(", ");
+            }
+        }
+        return example.toString();
     }
 }
